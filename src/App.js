@@ -7,7 +7,7 @@ function App() {
     <Router>
     <div className="App ">  
     <Table/>  
-    <h3>Made with love by: <a href="https://github.com/Shivproj">Shiv Sai Indrakanti</a></h3>  
+    <h3>Made with love by : <a href="https://github.com/Shivproj">Shiv Sai Indrakanti</a></h3>  
 
     </div>
     </Router>
