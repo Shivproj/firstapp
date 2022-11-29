@@ -5,7 +5,7 @@ const Form =(props)=>{
     const[record,setRecord] = useState({});
     useEffect(()=>{
         setRecord({...record,Name:props?.recordT?.Name,Age:props?.recordT?.Age});
-    },[props]);
+    },[]);
     
     
     const returnShow =()=>{
