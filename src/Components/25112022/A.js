@@ -16,7 +16,7 @@ const A =()=>{
     },[])
     const apiGet = () => {
         
-        fetch("http://localhost:5000/data")  
+        fetch("https://shivsai-test.herokuapp.com/data")  
           .then((response) => response.json())
           .then((json) => {
             
