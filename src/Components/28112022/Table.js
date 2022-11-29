@@ -8,7 +8,7 @@ const Table = () => {
     { Name: "Sai", Age: "21" },
     { Name: "Indrakanti", Age: 22 },
   ]);
-  const[count,setCount] = useState(0);  
+  
   const [showTable, setShowTable] = useState(true);
   const [selectionList, setSelectionList] = useState([]);
  
@@ -45,7 +45,7 @@ const Table = () => {
     
   };
   const deleteFun = () => {  
-    if(selectionList.length!=1){
+    if(selectionList.length!==1){
         alert('Please select one');
         return
     } 
