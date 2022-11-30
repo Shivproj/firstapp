@@ -1,6 +1,7 @@
 const B =()=>{
     return(
-        <div>B</div>
+        <div>
+            <h1>B</h1></div>
     )
 
 }
