@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 const Navbar =()=>{
     return(
     <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
@@ -10,7 +11,12 @@ const Navbar =()=>{
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" >Home</a>
-          </li>         
+          </li>   
+          <li class="nav-item">
+            <Link to="/A">A</Link>
+            </li>      
+          <li class="nav-item"><Link to="/B">B</Link>
+          </li>      
          </ul>   
        
         <form class="d-flex">
