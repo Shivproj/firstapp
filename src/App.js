@@ -1,8 +1,13 @@
 import "./App.css";
 import{BrowserRouter,Switch,Link, Route} from 'react-router-dom';
-import A from './Components/29112022/A';
-import B from './Components/29112022/B';
-import Navbar from './Components/navbar';
+import Class1 from './Components/9112022/Class1'
+import Calculator from "./Components/10112022/calculator";
+import A from './Components/11112022/A';
+import Base from './Components/17112022/Base';
+import Result from './Components/21112022/Result';
+import Table from './Components/28112022/Table';
+import Aparam from './Components/30112022/Aparam';
+import Calc from './Components/01122022/Calc'
 
 function App() {
    return (
@@ -10,21 +15,27 @@ function App() {
     
    
     
-  
+
     <div className="App ">
 
     
       <h1>Hi</h1> 
-      <Link to="/A/One">One</Link>
-      <Link to="/A/Two">Two </Link>
-      <Link to="/A/Three">Three</Link>
-      <Link to="/A/Four">Four</Link>
+      
      
     <Switch>
-
-  <Route path="/A/:id" exact children={<A/>}/>
+      
+     
+      <Route path="/9112022" children={<Class1/>}/>
+      <Route path="/10112022" children={<Calculator/>}/>
+      <Route path="/11112022" children={<A/>}/>
+      <Route path="/17112022" children={<Base/>}/>
+      <Route path="/21112022" children={<Result/>}/>
+      <Route path="/28112022" children={<Table/>}/>
+      <Route path="/30112022/:id" children={<Aparam/>}/>
+      <Route path="/01122022/:id1/:id2" children={<Calc/>}/>
+      
  
-    <Route path="/B" exact children={<B/>}/>
+    
    
     </Switch>
   
