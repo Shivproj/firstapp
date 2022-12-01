@@ -13,9 +13,9 @@ const Navbar =()=>{
             <a class="nav-link active" aria-current="page" >Home</a>
           </li>   
           <li class="nav-item">
-            <Link to="/A">A</Link>
+            <Link  class="nav-link active" to="/A">A</Link>
             </li>      
-          <li class="nav-item"><Link to="/B">B</Link>
+          <li class="nav-item"><Link  class="nav-link active" to="/B">B</Link>
           </li>      
          </ul>   
        

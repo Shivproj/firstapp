@@ -5,22 +5,26 @@ import B from './Components/29112022/B';
 import Navbar from './Components/navbar';
 
 function App() {
-  return (
+   return (
     <>
     
-    <Navbar/>
+   
     
   
     <div className="App ">
+
     
       <h1>Hi</h1> 
-      
+      <Link to="/A/One">One</Link>
+      <Link to="/A/Two">Two </Link>
+      <Link to="/A/Three">Three</Link>
+      <Link to="/A/Four">Four</Link>
      
     <Switch>
 
-  <Route path="/A" exact component={A}/>
+  <Route path="/A/:id" exact children={<A/>}/>
  
-    <Route path="/B" exact component={B}/>
+    <Route path="/B" exact children={<B/>}/>
    
     </Switch>
   
@@ -31,9 +35,12 @@ function App() {
 
     </div>
     </>
+
   
     
-  );
+  )
+
+
 }
 
 export default App;
