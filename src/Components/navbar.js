@@ -40,6 +40,8 @@ const Navbar =()=>{
           </li>   
           <li class="nav-item"><Link class="nav-link active" to="/01122022">01122022</Link>   
           </li>   
+          <li class="nav-item"><Link class="nav-link active" to="/05122022">05122022</Link>
+          </li>
 
          </ul>   
        
