@@ -1,6 +1,7 @@
 import { useRouteMatch, Switch, Route, useHistory } from "react-router-dom";
 import { useState } from "react";
-import Table from "./Table";
+import Table from './Table'
+
 const Form = () => {
   const [record, setRecord] = useState({});
   const { url, path } = useRouteMatch();
@@ -13,8 +14,11 @@ const Form = () => {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
+    history.push("/06122022/Table");
   };
-  const cancel = () => {};
+  const cancel = () => {
+    history.push("/06122022/Table");
+  };
   return (
     <div>
       <div class="form-item">
@@ -63,7 +67,7 @@ const Form = () => {
       </button>
 
       <Switch>
-        <Route path={`${url}/:action/:id?`} children={<Table />} />
+        <Route path={`${url}/Table`} children={<Table />} />
       </Switch>
     </div>
   );

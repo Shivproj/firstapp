@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
+import {Route,Switch,useHistory,useRouteMatch} from 'react-router-dom';
 const Table = () => {
+    const history = useHistory();
   const [tableList, setTableList] = useState([]);
   const [selectionList, setSelectionList] = useState([]);
   useEffect(() => {
@@ -24,6 +26,12 @@ const Table = () => {
     fetch(`http://localhost:3000/array/${record}`,{method:"DELETE"})
     setSelectionList([]);
     
+  }
+  const editRow =()=>{
+ 
+    history.push("/06122022/Form")
+
+
   }
 
   return (
@@ -61,6 +69,7 @@ const Table = () => {
 
 
       <button type="button" onClick={()=>deleteRow()}>Delete</button>
+      <button type="button" onClick={()=>editRow()}>Edit</button>
     </div>
   );
 };

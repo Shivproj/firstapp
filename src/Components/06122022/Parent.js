@@ -9,8 +9,8 @@ return(
     <Link to={`${url}/Table`}>Table</Link>
     <Link to ={`${url}/Form`}>Form</Link>
     <Switch>
-        <Route path= {`${url}/Table`} children={<Table/>}/>
-        <Route path= {`${url}/Form`} children={<Form/>}/>
+        <Route path= {`${url}/Table`} exact children={<Table/>}/>
+        <Route path= {`${url}/Form`} exact children={<Form/>}/>
     </Switch>
     </>
 )
