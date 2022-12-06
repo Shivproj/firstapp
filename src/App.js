@@ -8,14 +8,15 @@ import Result from "./Components/21112022/Result";
 import Table from "./Components/28112022/Table";
 import Aparam from "./Components/30112022/Aparam";
 import Calc from "./Components/01122022/Calc";
-import Home from "./Components/05122022/Home"
+import Home from "./Components/05122022/Home";
+import Parent from "./Components/06122022/Parent";
 
 function App() {
   return (
     <>
       <div className="App ">
-        <h1>Hi</h1>
-        <Redirect to="/05122022"/>
+        
+        
 
         <Switch>
           <Route path="/9112022" children={<Class1 />} />
@@ -26,7 +27,8 @@ function App() {
           <Route path="/28112022" children={<Table />} />
           <Route path="/30112022/:id" children={<Aparam />} />
           <Route path="/01122022/:id1/:id2" children={<Calc />} />
-          <Route path="/05122022/" children={<Home/>}/>
+          <Route path="/05122022" children={<Home/>}/>
+          <Route path="/06122022" children={<Parent/>}/>
 
           
         </Switch>
