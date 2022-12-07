@@ -1,19 +1,47 @@
-import { useRouteMatch, Switch, Route, useHistory } from "react-router-dom";
-import { useState } from "react";
+import { useRouteMatch, Switch, Route, useHistory,useParams } from "react-router-dom";
+import { useState,useEffect } from "react";
 import Table from './Table'
 
 const Form = () => {
-  const [record, setRecord] = useState({});
+    const [record, setRecord] = useState({});
+    const params = useParams();
+   useEffect(() => {
+    if(params.id && params.mode==="Edit"){   
+        console.log(params.id);   
+        fetch(`http://localhost:3000/array/${params.id}`).then(response =>response.json()).then(res=>setRecord(res))     
+
+ 
+
+ }
+   },[])
+    
+
+ 
   const { url, path } = useRouteMatch();
   const history = useHistory();
   const save = () => {
-    fetch("http://localhost:3000/array", {
+    console.log(record);
+    if(params.id){
+        fetch(`http://localhost:3000/array/${params.id}`, {
+      method: "PUT",
+      body: JSON.stringify(record),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+
+    }
+    else{
+        fetch("http://localhost:3000/array", {
       method: "POST",
       body: JSON.stringify(record),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
+
+    }
+    
     history.push("/06122022/Table");
   };
   const cancel = () => {
@@ -26,6 +54,7 @@ const Form = () => {
         <label>Id</label>
         <input
           type="text"
+          value={record.id}
           onChange={(e) => {
             setRecord({ ...record, id: e.target.value });
           }}
@@ -35,6 +64,7 @@ const Form = () => {
         <label>Name</label>{" "}
         <input
           type="text"
+          value={record.name}
           onChange={(e) => {
             setRecord({ ...record, name: e.target.value });
           }}
@@ -45,6 +75,7 @@ const Form = () => {
         <label>Username</label>
         <input
           type="text"
+          value={record.username}
           onChange={(e) => {
             setRecord({ ...record, username: e.target.value });
           }}
@@ -54,6 +85,7 @@ const Form = () => {
         <label>Email</label>{" "}
         <input
           type="text"
+          value={record.email}
           onChange={(e) => {
             setRecord({ ...record, email: e.target.value });
           }}
@@ -65,6 +97,7 @@ const Form = () => {
       <button type="button" onClick={() => cancel()}>
         Cancel
       </button>
+      
 
       <Switch>
         <Route path={`${url}/Table`} children={<Table />} />

@@ -29,9 +29,12 @@ const Table = () => {
   }
   const editRow =()=>{
  
-    history.push("/06122022/Form")
+    history.push(`/06122022/Form/Edit/${selectionList[0]}`)
 
 
+  }
+  const createRow =()=>{
+    history.push(`/06122022/Form/Create`)
   }
 
   return (
@@ -70,6 +73,7 @@ const Table = () => {
 
       <button type="button" onClick={()=>deleteRow()}>Delete</button>
       <button type="button" onClick={()=>editRow()}>Edit</button>
+      <button type="button" onClick={()=>createRow()}>Create</button>
     </div>
   );
 };
