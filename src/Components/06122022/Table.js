@@ -21,20 +21,29 @@ const Table = () => {
     console.log(checkList);
   };
   const deleteRow = () => {
-    const record = selectionList[0];
+    if (selectionList.length != 1) {
+      alert("Please select a row");
+    } else {
+      const record = selectionList[0];
 
-    fetch(`http://localhost:3000/array/${record}`, { method: "DELETE" });
-    setSelectionList([]);
-    //fetching data.
+      fetch(`http://localhost:3000/array/${record}`, { method: "DELETE" });
+      setSelectionList([]);
+      //fetching data.
 
-    fetch("http://localhost:3000/array")
-      .then((response) => response.json())
-      .then((res) => {
-        setTableList([...res]);
-      });
+      fetch("http://localhost:3000/array")
+        .then((response) => response.json())
+        .then((res) => {
+          setTableList([...res]);
+        });
+    }
   };
   const editRow = () => {
+    if (selectionList.length != 1) {
+      alert("Please select a row");
+    } 
+    else{
     history.push(`/06122022/Form/Edit/${selectionList[0]}`);
+    }
   };
   const createRow = () => {
     history.push(`/06122022/Form/Create`);
@@ -42,30 +51,30 @@ const Table = () => {
 
   return (
     <div>
-      <table>
+      <table width="50%" style={{ border: "1px solid"  }}>
         <thead>
-          <tr>
-            <td>Select</td>
-            <td>Id</td>
-            <td>Name</td>
-            <td>Username</td>
-            <td>Email</td>
+          <tr style={{ border: "1px solid" }}>
+            <td style={{ border: "1px solid" }}>Select</td>
+            <td style={{ border: "1px solid" }}>Id</td>
+            <td style={{ border: "1px solid" }}>Name</td>
+            <td style={{ border: "1px solid" }}>Username</td>
+            <td style={{ border: "1px solid" }}>Email</td>
           </tr>
         </thead>
         <tbody>
           {tableList.map((item) => (
-            <tr>
-              <td>
+            <tr style={{ border: "1px solid" }}>
+              <td style={{ border: "1px solid" }}>
                 <input
                   type="checkbox"
                   id={item.id}
                   onChange={(e) => select(e)}
                 />
               </td>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.username}</td>
-              <td>{item.email}</td>
+              <td style={{ border: "1px solid" }}>{item.id}</td>
+              <td style={{ border: "1px solid" }}>{item.name}</td>
+              <td style={{ border: "1px solid" }}>{item.username}</td>
+              <td style={{ border: "1px solid" }}>{item.email}</td>
             </tr>
           ))}
         </tbody>

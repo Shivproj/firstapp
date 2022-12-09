@@ -10,6 +10,9 @@ import Aparam from "./Components/30112022/Aparam";
 import Calc from "./Components/01122022/Calc";
 import Home from "./Components/05122022/Home";
 import Parent from "./Components/06122022/Parent";
+import Counter from "./Components/07122022/Counter";
+import Login from "./Components/09122022/login"
+
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
           <Route path="/01122022/:id1/:id2" children={<Calc />} />
           <Route path="/05122022" children={<Home/>}/>
           <Route path="/06122022" children={<Parent/>}/>
+          <Route path="/07122022" children={<Counter/>}/>
+          <Route path="/09122022" children={<Login/>}/>
+          
 
           
         </Switch>
