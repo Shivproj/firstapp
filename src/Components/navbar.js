@@ -20,8 +20,17 @@ const Navbar =()=>{
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            
           <li class="nav-item">
+            <Link class="nav-link active" to="/Login">Login</Link>
+            </li>
+            <li class="nav-item">
+            <Link class="nav-link active" to="/Register">Register</Link>
+            </li>
+            <li class="nav-item">
+            <Link class="nav-link active" to="/Profile">Profile</Link>
+            </li>
+            
+          {/* <li class="nav-item">
             <Link  class="nav-link active" to="/9112022">9112022</Link>
             </li>      
           <li class="nav-item"><Link  class="nav-link active" to="/10112022">10112022</Link>
@@ -45,14 +54,13 @@ const Navbar =()=>{
           <li class="nav-item"><Link class="nav-link active" to="/06122022">06122022</Link>
           </li>      
           <li class="nav-item"><Link class="nav-link active" to="/09122022">09122022</Link>
-          </li>
+          </li> */}
+
+
 
          </ul>   
        
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+      
       </div>
     </div>
   </nav>
